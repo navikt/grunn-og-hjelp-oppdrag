@@ -1,17 +1,17 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: familie-oppdrag-backend
-  namespace: teamfamilie
+  name: grunn-og-hjelp-oppdrag
+  namespace: grunn-og-hjelp
   labels:
-    team: teamfamilie
+    team: grunn-og-hjelp
 
 spec:
   image: {{ image }}
   port: 8087
   envFrom:
-    - secret: familie-oppdrag-backend
-    - secret: familie-oppdrag-backend-unleash-api-token
+    - secret: grunn-og-hjelp-oppdrag
+    - secret: grunn-og-hjelp-oppdrag-unleash-api-token
   liveness:
     path: /internal/health/liveness
     initialDelay: 30
@@ -33,17 +33,10 @@ spec:
       memory: 700Mi
       cpu: 25m
   ingresses:
-    - https://familie-oppdrag-backend.intern.dev.nav.no
+    - https://grunn-og-hjelp-oppdrag.intern.dev.nav.no
   gcp:
-    sqlInstances:
-      - type: POSTGRES_17 # IF This is changed, all data will be lost. Read on nais.io how to upgrade
-        tier: db-custom-1-3840
-        name: familie-oppdrag-17
-        autoBackupHour: 2
-        diskAutoresize: true
-        databases:
-          - name: familie-oppdrag
-            envVarPrefix: DB
+    sqlInstances: # todo:
+
   azure:
     application:
       enabled: true
@@ -51,40 +44,15 @@ spec:
   accessPolicy:
     inbound:
       rules:
-        - application: familie-ba-sak-lokal
-          cluster: dev-gcp
-        - application: familie-ba-sak
-          cluster: dev-gcp
-        - application: familie-ks-sak
-          cluster: dev-gcp
-        - application: familie-tilbake
-          cluster: dev-gcp
-        - application: tilbakekreving-backend
-          namespace: tilbake
-          cluster: dev-gcp
-        - application: familie-tilbake-lokal
-          cluster: dev-gcp
-        - application: familie-ef-sak
-          cluster: dev-gcp
-        - application: familie-ef-sak-lokal
-          cluster: dev-gcp
-        - application: familie-ef-iverksett
-          cluster: dev-gcp
-        - application: familie-ef-iverksett-lokal
-          cluster: dev-gcp
-        - application: azure-token-generator
-          namespace: nais
+        - application: grunn-og-hjelpestonad
           cluster: dev-gcp
     outbound:
       rules:
         - application: logging
           namespace: nais-system
       external:
-        - host: b27apvl220.preprod.local
-          ports:
-            - port: 1413
         - host: familie-ws-proxy.dev-fss-pub.nais.io
-        - host: teamfamilie-unleash-api.nav.cloud.nais.io
+        #- host: teamfamilie-unleash-api.nav.cloud.nais.io
 
   observability:
     logging:
