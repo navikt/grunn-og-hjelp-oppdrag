@@ -13,12 +13,9 @@ object AvstemmingMapper {
     }
 
     fun fagområdeTilAvleverendeKomponentKode(fagområde: String): String =
+        // TODO Hva er vår koder og fagområder for oss?
         when (fagområde) {
-            "EFOG" -> "EF"
-            "EFBT" -> "EF"
-            "EFSP" -> "EF"
-            "BA" -> "BA"
-            "KS" -> "KS"
+            "GH" -> "GH"
             else -> throw Error("$fagområde støttes ikke ennå")
         }
 }
