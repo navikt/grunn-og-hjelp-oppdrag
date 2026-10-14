@@ -64,8 +64,11 @@ spec:
         - application: logging
           namespace: nais-system
       external:
+        - host: b27apvl220.preprod.local
+          ports:
+            - port: 1413
         - host: familie-ws-proxy.dev-fss-pub.nais.io
-        #- host: teamfamilie-unleash-api.nav.cloud.nais.io
+        #- host: teamfamilie-unleash-api.nav.cloud.nais.io legg til egen unleash?
 
   observability:
     logging:
