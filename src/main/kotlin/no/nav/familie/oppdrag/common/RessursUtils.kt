@@ -29,11 +29,6 @@ object RessursUtils {
         throwable: Throwable? = null,
     ): ResponseEntity<Ressurs<T>> = errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, errorMessage, throwable)
 
-    fun <T> serviceUnavailable(
-        errorMessage: String,
-        throwable: Throwable? = null,
-    ): ResponseEntity<Ressurs<T>> = errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, errorMessage, throwable)
-
     fun <T> ok(
         data: T,
         melding: String? = null,
