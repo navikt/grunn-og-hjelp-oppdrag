@@ -35,7 +35,20 @@ spec:
   ingresses:
     - https://grunn-og-hjelp-oppdrag.intern.dev.nav.no
   gcp:
-    sqlInstances: # todo:
+    sqlInstances:
+      - name: grunn-og-hjelp-oppdrag
+        type: POSTGRES_18
+        tier: db-g1-small
+        diskAutoresize: true
+        cascadingDelete: false
+        highAvailability: false
+        pointInTimeRecovery: true
+        maintenance:
+          day: 7
+          hour: 23
+        databases:
+          - name: grunn-og-hjelp-oppdrag
+            envVarPrefix: DB
 
   azure:
     application:
