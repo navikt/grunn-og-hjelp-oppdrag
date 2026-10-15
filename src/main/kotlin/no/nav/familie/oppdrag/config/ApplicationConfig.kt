@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootConfiguration
 @EntityScan(ApplicationConfig.PAKKENAVN)
-@ComponentScan(ApplicationConfig.PAKKENAVN, "no.nav.familie.felles.tokenklient", "no.nav.familie.unleash")
+@ComponentScan(ApplicationConfig.PAKKENAVN, "no.nav.familie.felles.tokenklient")
 @EnableScheduling
 class ApplicationConfig {
     @Bean

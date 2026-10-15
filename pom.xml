@@ -228,12 +228,6 @@
             <version>${felles.version}</version>
         </dependency>
         <dependency>
-            <groupId>no.nav.familie.felles</groupId>
-            <artifactId>unleash</artifactId>
-            <version>${felles.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>no.nav.familie.tjenestespesifikasjoner</groupId>
             <artifactId>avstemming-v1-tjenestespesifikasjon</artifactId>
             <version>${tjenestespesifikasjoner.version}</version>
@@ -318,20 +312,11 @@
             <version>${cxf.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.threeten-jaxb/threeten-jaxb-core -->
         <dependency>
             <groupId>io.github.threeten-jaxb</groupId>
             <artifactId>threeten-jaxb-core</artifactId>
             <version>2.2.0</version>
         </dependency>
-
-        <!--
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-common</artifactId>
