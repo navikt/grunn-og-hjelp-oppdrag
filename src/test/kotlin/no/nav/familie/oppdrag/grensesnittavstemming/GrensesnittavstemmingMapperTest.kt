@@ -128,7 +128,7 @@ class GrensesnittavstemmingMapperTest {
         assertEquals(expected, actual.aksjonType)
         assertEquals(KildeType.AVLEV, actual.kildeType)
         assertEquals(AvstemmingType.GRSN, actual.avstemmingType)
-        assertEquals("IT24", actual.avleverendeKomponentKode)
+        assertEquals(fagområde, actual.avleverendeKomponentKode)
         assertEquals(SystemKode.OPPDRAGSSYSTEMET.kode, actual.mottakendeKomponentKode)
         assertEquals(fagområde, actual.underkomponentKode)
         assertEquals(avstemmingFom.format(tidspunktFormatter), actual.nokkelFom)
