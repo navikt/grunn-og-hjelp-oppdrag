@@ -1,11 +1,9 @@
 package no.nav.familie.oppdrag.rest
 
-import io.mockk.mockk
 import no.nav.familie.kontrakter.felles.Ressurs
 import no.nav.familie.kontrakter.felles.oppdrag.OppdragId
 import no.nav.familie.kontrakter.felles.oppdrag.OppdragStatus
 import no.nav.familie.kontrakter.felles.oppdrag.oppdragId
-import no.nav.familie.oppdrag.featuretoggle.FeatureToggleService
 import no.nav.familie.oppdrag.iverksetting.OppdragMapper
 import no.nav.familie.oppdrag.repository.OppdragLagerRepository
 import no.nav.familie.oppdrag.service.OppdragService
@@ -43,7 +41,6 @@ internal class OppdragControllerIntegrationTest(
     @Autowired private val oppdragMapper: OppdragMapper,
     @Autowired private val oppdragLagerRepository: OppdragLagerRepository,
 ) {
-    private val featureToggleService = mockk<FeatureToggleService>()
     private val oppdragController = OppdragController(oppdragService, oppdragMapper)
 
     companion object {

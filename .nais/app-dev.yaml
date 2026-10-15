@@ -11,7 +11,6 @@ spec:
   port: 8087
   envFrom:
     - secret: grunn-og-hjelp-oppdrag
-    - secret: grunn-og-hjelp-oppdrag-unleash-api-token
   liveness:
     path: /internal/health/liveness
     initialDelay: 30
@@ -68,7 +67,6 @@ spec:
           ports:
             - port: 1413
         - host: familie-ws-proxy.dev-fss-pub.nais.io
-        #- host: teamfamilie-unleash-api.nav.cloud.nais.io legg til egen unleash?
 
   observability:
     logging:

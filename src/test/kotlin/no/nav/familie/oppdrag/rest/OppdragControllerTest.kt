@@ -12,7 +12,6 @@ import no.nav.familie.kontrakter.felles.oppdrag.OppdragStatus
 import no.nav.familie.kontrakter.felles.oppdrag.Opphør
 import no.nav.familie.kontrakter.felles.oppdrag.Utbetalingsoppdrag
 import no.nav.familie.kontrakter.felles.oppdrag.Utbetalingsperiode
-import no.nav.familie.oppdrag.featuretoggle.FeatureToggleService
 import no.nav.familie.oppdrag.iverksetting.OppdragMapper
 import no.nav.familie.oppdrag.iverksetting.OppdragSender
 import no.nav.familie.oppdrag.repository.OppdragLager
@@ -29,8 +28,6 @@ import kotlin.test.assertEquals
 internal class OppdragControllerTest {
     val localDateTimeNow = LocalDateTime.now()
     val localDateNow = LocalDate.now()
-
-    private val featureToggleService = mockk<FeatureToggleService>()
 
     val utbetalingsoppdrag =
         Utbetalingsoppdrag(
