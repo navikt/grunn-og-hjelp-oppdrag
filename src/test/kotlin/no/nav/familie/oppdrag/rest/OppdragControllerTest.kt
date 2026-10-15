@@ -35,7 +35,7 @@ internal class OppdragControllerTest {
     val utbetalingsoppdrag =
         Utbetalingsoppdrag(
             Utbetalingsoppdrag.KodeEndring.NY,
-            "BA",
+            "GH",
             "SAKSNR",
             "PERSONID",
             "SAKSBEHANDLERID",
@@ -67,7 +67,7 @@ internal class OppdragControllerTest {
         verify {
             oppdragLagerRepository.opprettOppdrag(
                 match<OppdragLager> {
-                    it.utgåendeOppdrag.contains("BA") &&
+                    it.utgåendeOppdrag.contains("GH") &&
                         it.status == OppdragStatus.LAGT_PÅ_KØ &&
                         it.opprettetTidspunkt > localDateTimeNow
                 },
@@ -90,7 +90,7 @@ internal class OppdragControllerTest {
     @Test
     fun `Skal kaste 409 feil om oppdrag allerede er kvittert ut`() {
         val (oppdragLagerRepository, oppdragController) = mockkOppdragController(false)
-        val oppdragId = OppdragId(fagsystem = "BA", personIdent = "test", behandlingsId = "0")
+        val oppdragId = OppdragId(fagsystem = "GH", personIdent = "test", behandlingsId = "0")
         val mocketOppdragLager = mockk<OppdragLager>()
 
         every { mocketOppdragLager.status } returns OppdragStatus.KVITTERT_OK
@@ -107,7 +107,7 @@ internal class OppdragControllerTest {
     @Test
     fun `Skal returnere 200 OK om oppdrag ble manuelt kvittert ut`() {
         val (oppdragLagerRepository, oppdragController) = mockkOppdragController(false)
-        val oppdragId = OppdragId(fagsystem = "BA", personIdent = "test", behandlingsId = "0")
+        val oppdragId = OppdragId(fagsystem = "GH", personIdent = "test", behandlingsId = "0")
         val mocketOppdragLager = mockk<OppdragLager>()
 
         every { mocketOppdragLager.status } returns OppdragStatus.LAGT_PÅ_KØ

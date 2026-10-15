@@ -101,7 +101,7 @@ class GrensesnittavstemmingIdTest(
         val avstemmingId = UUID.randomUUID()
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = avstemmingId,
@@ -110,7 +110,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = avstemmingId,
@@ -131,7 +131,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = null,
@@ -152,7 +152,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = null,
@@ -161,7 +161,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = null,
@@ -182,7 +182,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = UUID.randomUUID(),
@@ -191,7 +191,7 @@ class GrensesnittavstemmingIdTest(
 
         grensesnittavstemmingService.utførGrensesnittavstemming(
             GrensesnittavstemmingRequest(
-                fagsystem = "BA",
+                fagsystem = "GH",
                 fra = LocalDateTime.now().minusDays(2),
                 til = LocalDateTime.now(),
                 avstemmingId = UUID.randomUUID(),
@@ -206,7 +206,7 @@ class GrensesnittavstemmingIdTest(
         val utbetalingsoppdrag =
             TestOppdragMedAvstemmingsdato.lagTestUtbetalingsoppdrag(
                 LocalDateTime.now().minusDays(1),
-                "BA",
+                "GH",
                 utbetalingsperiode = arrayOf(TestOppdragMedAvstemmingsdato.lagUtbetalingsperiode()),
             )
         val oppdrag = oppdragMapper.tilOppdrag(oppdragMapper.tilOppdrag110(utbetalingsoppdrag))

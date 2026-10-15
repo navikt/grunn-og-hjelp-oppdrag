@@ -26,7 +26,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class KonsistensavstemmingMapperTest {
-    private val fagområde = "BA"
+    private val fagområde = "GH"
     private val idag: LocalDateTime = LocalDateTime.now()
     private val tidspunktFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss.SSSSSS")
     private val datoFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
@@ -155,7 +155,7 @@ class KonsistensavstemmingMapperTest {
         assertEquals(expected, actual.aksjonsType)
         assertEquals(KonsistensavstemmingConstants.KILDETYPE, actual.kildeType)
         assertEquals(KonsistensavstemmingConstants.KONSISTENSAVSTEMMING, actual.avstemmingType)
-        assertEquals(fagområde, actual.avleverendeKomponentKode)
+        assertEquals("IT24", actual.avleverendeKomponentKode)
         assertEquals(SystemKode.OPPDRAGSSYSTEMET.kode, actual.mottakendeKomponentKode)
         assertEquals(fagområde, actual.underkomponentKode)
         assertEquals(idag.format(tidspunktFormatter), actual.tidspunktAvstemmingTom)

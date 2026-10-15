@@ -2,10 +2,6 @@ package no.nav.familie.oppdrag.config
 
 import no.nav.familie.kontrakter.felles.Ressurs
 import no.nav.familie.oppdrag.common.RessursUtils.illegalState
-import no.nav.familie.oppdrag.common.RessursUtils.serviceUnavailable
-import no.nav.familie.oppdrag.tss.TssConnectionException
-import no.nav.familie.oppdrag.tss.TssException
-import no.nav.familie.oppdrag.tss.TssNoDataFoundException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.core.NestedExceptionUtils.getMostSpecificCause
@@ -33,26 +29,6 @@ class ApiExceptionHandler {
         return ResponseEntity
             .status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(Ressurs.failure(errorMessage = feil.message))
-    }
-
-    @ExceptionHandler(TssException::class)
-    fun handleTssException(tssException: TssException): ResponseEntity<Ressurs<Nothing>> {
-        logger.warn("Feil mot TSS: ${tssException.message}", tssException)
-        return when (tssException) {
-            is TssConnectionException -> {
-                serviceUnavailable(tssException.message!!, tssException)
-            }
-
-            is TssNoDataFoundException -> {
-                ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body(Ressurs.failure(errorMessage = tssException.message))
-            }
-
-            else -> {
-                illegalState(tssException.message!!, tssException)
-            }
-        }
     }
 
     @ExceptionHandler(FinnesIkkeITps::class)

@@ -20,7 +20,7 @@ import java.time.LocalDateTime
 import java.util.Optional
 
 class GrensesnittavstemmingServiceTest {
-    val fagområde = "EFOG"
+    val fagområde = "GH"
     val antall = 2
 
     val avstemmingSender = mockk<AvstemmingSender>()

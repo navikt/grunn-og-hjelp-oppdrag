@@ -26,7 +26,7 @@ object TestOppdragMedAvstemmingsdato {
     )
 
     fun lagUtbetalingsperiode(
-        fagområde: String = "BA",
+        fagområde: String = "GH",
         periodeId: Long = 1,
         beløp: Int = 100,
         fom: LocalDate = LocalDate.now().withDayOfMonth(1),
@@ -38,7 +38,7 @@ object TestOppdragMedAvstemmingsdato {
         periodeId = periodeId,
         forrigePeriodeId = null,
         datoForVedtak = LocalDate.now(),
-        klassifisering = if (fagområde.equals("BA")) "BATR" else "EF",
+        klassifisering = if (fagområde.equals("GH")) "BATR" else "EF",
         vedtakdatoFom = fom,
         vedtakdatoTom = tom,
         sats = beløp.toBigDecimal(),

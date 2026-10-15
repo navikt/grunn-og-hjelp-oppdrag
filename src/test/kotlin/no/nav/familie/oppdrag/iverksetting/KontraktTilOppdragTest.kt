@@ -51,7 +51,7 @@ class KontraktTilOppdragTest {
         val utbetalingsoppdrag =
             Utbetalingsoppdrag(
                 kodeEndring = Utbetalingsoppdrag.KodeEndring.NY,
-                fagSystem = "BA",
+                fagSystem = "GH",
                 saksnummer = "12345678",
                 aktoer = "12345678911",
                 saksbehandlerId = "Z992991",
@@ -85,7 +85,7 @@ class KontraktTilOppdragTest {
         val utbetalingsoppdrag =
             Utbetalingsoppdrag(
                 kodeEndring = Utbetalingsoppdrag.KodeEndring.ENDR,
-                fagSystem = "BA",
+                fagSystem = "GH",
                 saksnummer = "12345678",
                 aktoer = "12345678911",
                 saksbehandlerId = "Z992991",
@@ -110,7 +110,7 @@ class KontraktTilOppdragTest {
         Assertions.assertEquals(utbetalingsoppdrag.aktoer, oppdrag110.oppdragGjelderId)
         Assertions.assertEquals(OppdragSkjemaConstants.OPPDRAG_GJELDER_DATO_FOM.toXMLDate(), oppdrag110.datoOppdragGjelderFom)
         Assertions.assertEquals(utbetalingsoppdrag.saksbehandlerId, oppdrag110.saksbehId)
-        Assertions.assertEquals(utbetalingsoppdrag.fagSystem, oppdrag110.avstemming115.kodeKomponent)
+        Assertions.assertEquals("IT24", oppdrag110.avstemming115.kodeKomponent)
         Assertions.assertEquals(
             utbetalingsoppdrag.avstemmingTidspunkt.format(OppdragMapper().tidspunktFormatter),
             oppdrag110.avstemming115.nokkelAvstemming,
