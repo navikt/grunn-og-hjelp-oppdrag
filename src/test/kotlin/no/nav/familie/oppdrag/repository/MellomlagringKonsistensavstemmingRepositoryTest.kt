@@ -76,7 +76,7 @@ internal class MellomlagringKonsistensavstemmingRepositoryTest {
         totalBeløp: Long,
         transaksjonsId: UUID,
     ) = MellomlagringKonsistensavstemming(
-        fagsystem = Fagsystem.BA,
+        fagsystem = Fagsystem.GH,
         transaksjonsId = transaksjonsId,
         antallOppdrag = antallOppdrag,
         totalBeløp = totalBeløp,

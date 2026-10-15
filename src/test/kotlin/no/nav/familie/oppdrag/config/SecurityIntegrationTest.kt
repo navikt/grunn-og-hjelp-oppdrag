@@ -39,7 +39,7 @@ class SecurityIntegrationTest {
         """
         {
           "kodeEndring": "NY",
-          "fagSystem": "BA",
+          "fagSystem": "GH",
           "saksnummer": "TEST-123",
           "aktoer": "12345678901",
           "saksbehandlerId": "TEST-USER",

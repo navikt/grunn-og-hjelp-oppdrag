@@ -23,7 +23,7 @@ import org.testcontainers.junit.jupiter.Testcontainers
 import java.time.LocalDateTime
 
 private const val TESTKØ = "DEV.QUEUE.2"
-private const val FAGOMRÅDE = "BA"
+private const val FAGOMRÅDE = "GH"
 private val IDAG = LocalDateTime.now()
 
 @DisabledIfEnvironmentVariable(named = "CIRCLECI", matches = "true")

@@ -27,7 +27,7 @@ import java.time.format.DateTimeFormatter
 import kotlin.test.assertEquals
 
 class GrensesnittavstemmingMapperTest {
-    val fagområde = "BA"
+    val fagområde = "GH"
     val tidspunktFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss.SSSSSS")
 
     @Test
@@ -128,7 +128,7 @@ class GrensesnittavstemmingMapperTest {
         assertEquals(expected, actual.aksjonType)
         assertEquals(KildeType.AVLEV, actual.kildeType)
         assertEquals(AvstemmingType.GRSN, actual.avstemmingType)
-        assertEquals(fagområde, actual.avleverendeKomponentKode)
+        assertEquals("IT24", actual.avleverendeKomponentKode)
         assertEquals(SystemKode.OPPDRAGSSYSTEMET.kode, actual.mottakendeKomponentKode)
         assertEquals(fagområde, actual.underkomponentKode)
         assertEquals(avstemmingFom.format(tidspunktFormatter), actual.nokkelFom)

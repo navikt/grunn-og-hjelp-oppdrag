@@ -95,7 +95,7 @@ class KonsistensavstemmingServiceTest {
                 PerioderForBehandling("1", setOf(1), aktiveFødselsnummere[0]),
                 PerioderForBehandling("2", setOf(3), aktiveFødselsnummere[0]),
             )
-        val request = KonsistensavstemmingRequestV2("BA", perioder, LocalDateTime.now())
+        val request = KonsistensavstemmingRequestV2("GH", perioder, LocalDateTime.now())
 
         konsistensavstemmingService.utførKonsistensavstemming(request, true, true, null)
 
@@ -137,7 +137,7 @@ class KonsistensavstemmingServiceTest {
                 PerioderForBehandling("1", setOf(1), aktiveFødselsnummere[0], "tss-id"),
                 PerioderForBehandling("2", setOf(2, 3), aktiveFødselsnummere[0]),
             )
-        val request = KonsistensavstemmingRequestV2("BA", perioder, LocalDateTime.now())
+        val request = KonsistensavstemmingRequestV2("GH", perioder, LocalDateTime.now())
 
         konsistensavstemmingService.utførKonsistensavstemming(request, true, true, null)
 
@@ -185,7 +185,7 @@ class KonsistensavstemmingServiceTest {
                 PerioderForBehandling("3", setOf(1, 2), aktiveFødselsnummere[1]),
             )
 
-        val request = KonsistensavstemmingRequestV2("BA", perioder, LocalDateTime.now())
+        val request = KonsistensavstemmingRequestV2("GH", perioder, LocalDateTime.now())
 
         konsistensavstemmingService.utførKonsistensavstemming(request, true, true, null)
 
@@ -236,7 +236,7 @@ class KonsistensavstemmingServiceTest {
         every { mellomlagringKonsistensavstemmingRepository.findAllByTransaksjonsId(any()) } returns emptyList()
 
         val avstemmingstidspunkt = LocalDateTime.now()
-        val request = KonsistensavstemmingRequestV2("BA", emptyList(), avstemmingstidspunkt)
+        val request = KonsistensavstemmingRequestV2("GH", emptyList(), avstemmingstidspunkt)
         val transaksjonsId = UUID.randomUUID()
 
         konsistensavstemmingService.utførKonsistensavstemming(request, true, false, transaksjonsId)
@@ -266,7 +266,7 @@ class KonsistensavstemmingServiceTest {
         every { mellomlagringKonsistensavstemmingRepository.hentAggregertAntallOppdrag(transaksjonsId) } returns 33
 
         val avstemmingstidspunkt = LocalDateTime.now()
-        val request = KonsistensavstemmingRequestV2("BA", emptyList(), avstemmingstidspunkt)
+        val request = KonsistensavstemmingRequestV2("GH", emptyList(), avstemmingstidspunkt)
 
         konsistensavstemmingService.utførKonsistensavstemming(request, false, true, transaksjonsId)
 
@@ -303,7 +303,7 @@ class KonsistensavstemmingServiceTest {
                 PerioderForBehandling("3", setOf(1, 2), aktiveFødselsnummere[1]),
             )
 
-        val request = KonsistensavstemmingRequestV2("BA", perioder, avstemmingstidspunkt)
+        val request = KonsistensavstemmingRequestV2("GH", perioder, avstemmingstidspunkt)
         val transaksjonsId = UUID.randomUUID()
 
         konsistensavstemmingService.utførKonsistensavstemming(request, false, false, transaksjonsId)
@@ -313,7 +313,7 @@ class KonsistensavstemmingServiceTest {
         val mkSlot = slot<MellomlagringKonsistensavstemming>()
         val totalBeløpSlot = slot<Long>()
 
-        verify(exactly = 1) { oppdragLagerRepository.hentUtbetalingsoppdragForKonsistensavstemming("BA", eq(setOf("1", "3"))) }
+        verify(exactly = 1) { oppdragLagerRepository.hentUtbetalingsoppdragForKonsistensavstemming("GH", eq(setOf("1", "3"))) }
         verify(exactly = 0) { mellomlagringKonsistensavstemmingRepository.findAllByTransaksjonsId(any()) }
 
         verifyOrder {
@@ -359,7 +359,7 @@ class KonsistensavstemmingServiceTest {
         behandlingId,
         Utbetalingsoppdrag(
             kodeEndring = Utbetalingsoppdrag.KodeEndring.NY,
-            fagSystem = "BA",
+            fagSystem = "GH",
             saksnummer = saksnummer,
             aktoer = "aktoer",
             saksbehandlerId = "saksbehandler",

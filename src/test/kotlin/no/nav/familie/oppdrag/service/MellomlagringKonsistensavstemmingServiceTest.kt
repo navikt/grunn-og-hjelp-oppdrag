@@ -74,5 +74,5 @@ class MellomlagringKonsistensavstemmingServiceTest {
         sendStartmelding: Boolean,
         sendAvsluttmelding: Boolean,
         transaksjonsId: UUID?,
-    ) = KonsistensavstemmingMetaInfo(Fagsystem.BA, transaksjonsId, LocalDateTime.now(), sendStartmelding, sendAvsluttmelding, emptyList())
+    ) = KonsistensavstemmingMetaInfo(Fagsystem.GH, transaksjonsId, LocalDateTime.now(), sendStartmelding, sendAvsluttmelding, emptyList())
 }
