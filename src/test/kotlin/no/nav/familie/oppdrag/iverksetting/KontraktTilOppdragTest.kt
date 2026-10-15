@@ -110,7 +110,7 @@ class KontraktTilOppdragTest {
         Assertions.assertEquals(utbetalingsoppdrag.aktoer, oppdrag110.oppdragGjelderId)
         Assertions.assertEquals(OppdragSkjemaConstants.OPPDRAG_GJELDER_DATO_FOM.toXMLDate(), oppdrag110.datoOppdragGjelderFom)
         Assertions.assertEquals(utbetalingsoppdrag.saksbehandlerId, oppdrag110.saksbehId)
-        Assertions.assertEquals("IT24", oppdrag110.avstemming115.kodeKomponent)
+        Assertions.assertEquals(utbetalingsoppdrag.fagSystem, oppdrag110.avstemming115.kodeKomponent)
         Assertions.assertEquals(
             utbetalingsoppdrag.avstemmingTidspunkt.format(OppdragMapper().tidspunktFormatter),
             oppdrag110.avstemming115.nokkelAvstemming,

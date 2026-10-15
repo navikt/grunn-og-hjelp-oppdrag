@@ -155,7 +155,7 @@ class KonsistensavstemmingMapperTest {
         assertEquals(expected, actual.aksjonsType)
         assertEquals(KonsistensavstemmingConstants.KILDETYPE, actual.kildeType)
         assertEquals(KonsistensavstemmingConstants.KONSISTENSAVSTEMMING, actual.avstemmingType)
-        assertEquals("IT24", actual.avleverendeKomponentKode)
+        assertEquals(fagområde, actual.avleverendeKomponentKode)
         assertEquals(SystemKode.OPPDRAGSSYSTEMET.kode, actual.mottakendeKomponentKode)
         assertEquals(fagområde, actual.underkomponentKode)
         assertEquals(idag.format(tidspunktFormatter), actual.tidspunktAvstemmingTom)
