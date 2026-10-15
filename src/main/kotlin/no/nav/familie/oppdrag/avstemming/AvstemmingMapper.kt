@@ -13,9 +13,9 @@ object AvstemmingMapper {
     }
 
     fun fagområdeTilAvleverendeKomponentKode(fagområde: String): String =
-        // TODO Hva er vår koder og fagområder for oss?
+        // TODO Hva er koder og fagområder for oss?
         when (fagområde) {
-            "GH" -> "GH"
+            "GH" -> "IT24"
             else -> throw Error("$fagområde støttes ikke ennå")
         }
 }

@@ -165,9 +165,5 @@ enum class Status(
 }
 
 enum class Fagsystem {
-    BA,
-    EFOG,
-    EFBT,
-    EFSP,
-    KS,
+    GH,
 }
